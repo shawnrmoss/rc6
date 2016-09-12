@@ -1,0 +1,45 @@
+<!-- MDL Progress Bar with Indeterminate Progress -->
+<div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate fm-page-loading" *ngIf="loading"></div>
+<div class="fm-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="fm-header mdl-layout__header fm-color--appbar mdl-color-text--grey-600 mdl-layout__header--waterfall">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title">Home</span>
+            <div class="mdl-layout-spacer"></div>            
+        </div>
+        <!-- Bottom row, not visible on scroll -->
+        <ng-content select=".fm-layout-header-content"></ng-content>
+    </header>
+    <div class="fm-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="fm-drawer-header">
+            <!--<img src="images/user.jpg" class="fm-avatar">-->
+            <div class="fm-avatar-dropdown">
+                <span>hello@example.com</span>
+                <div class="mdl-layout-spacer"></div>
+                <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+              <i class="material-icons" role="presentation">arrow_drop_down</i>
+              <span class="visuallyhidden">Accounts</span>
+            </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                    <li class="mdl-menu__item">hello@example.com</li>
+                    <li class="mdl-menu__item">info@example.com</li>
+                    <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
+                </ul>
+            </div>
+        </header>
+        <nav class="fm-navigation mdl-navigation mdl-color--blue-grey-800">
+            <a class="mdl-navigation__link" [routerLink]=" ['Library'] ">
+                <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">delete</i>Library
+            </a>
+            <div class="mdl-layout-spacer"></div>
+            <a class="mdl-navigation__link">
+                <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i>
+                <span class="visuallyhidden">Help</span>
+            </a>
+        </nav>
+    </div>
+    <main class="mdl-layout__content">
+
+        <ng-content select=".fm-layout-content"></ng-content>
+
+    </main>
+</div>
